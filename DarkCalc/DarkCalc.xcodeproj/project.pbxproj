@@ -13,6 +13,7 @@
 		EE58F54D29D318FE0055E020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE58F54C29D318FE0055E020 /* Assets.xcassets */; };
 		EE58F55029D318FE0055E020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE58F54E29D318FE0055E020 /* LaunchScreen.storyboard */; };
 		EE58F55829D31A140055E020 /* NumericKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58F55729D31A140055E020 /* NumericKeyboard.swift */; };
+		EE58F55E29D353D40055E020 /* DarkCalcLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58F55D29D353D40055E020 /* DarkCalcLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EE58F54F29D318FE0055E020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE58F55129D318FE0055E020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE58F55729D31A140055E020 /* NumericKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericKeyboard.swift; sourceTree = "<group>"; };
+		EE58F55D29D353D40055E020 /* DarkCalcLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkCalcLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		EE58F54229D318FD0055E020 /* DarkCalc */ = {
 			isa = PBXGroup;
 			children = (
+				EE58F55929D352E50055E020 /* Model */,
+				EE58F55C29D353050055E020 /* View */,
+				EE58F55A29D352ED0055E020 /* ViewModel */,
 				EE58F54329D318FD0055E020 /* AppDelegate.swift */,
 				EE58F54529D318FD0055E020 /* SceneDelegate.swift */,
-				EE58F54729D318FD0055E020 /* DarkCalcViewController.swift */,
 				EE58F54C29D318FE0055E020 /* Assets.xcassets */,
 				EE58F54E29D318FE0055E020 /* LaunchScreen.storyboard */,
 				EE58F55129D318FE0055E020 /* Info.plist */,
-				EE58F55729D31A140055E020 /* NumericKeyboard.swift */,
 			);
 			path = DarkCalc;
+			sourceTree = "<group>";
+		};
+		EE58F55929D352E50055E020 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE58F55D29D353D40055E020 /* DarkCalcLogic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE58F55A29D352ED0055E020 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE58F54729D318FD0055E020 /* DarkCalcViewController.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE58F55C29D353050055E020 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE58F55729D31A140055E020 /* NumericKeyboard.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +166,7 @@
 			files = (
 				EE58F54829D318FD0055E020 /* DarkCalcViewController.swift in Sources */,
 				EE58F54429D318FD0055E020 /* AppDelegate.swift in Sources */,
+				EE58F55E29D353D40055E020 /* DarkCalcLogic.swift in Sources */,
 				EE58F55829D31A140055E020 /* NumericKeyboard.swift in Sources */,
 				EE58F54629D318FD0055E020 /* SceneDelegate.swift in Sources */,
 			);

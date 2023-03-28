@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol NumericKeyboardDelegate {
+    func getValue(character: String)
+}
+
 class NumericKeyboard: UIStackView {
+    var delegate: NumericKeyboardDelegate?
+    
     lazy var lineOneStackView: UIStackView = setStackView()
     lazy var ac: UIButton = setButton(title: "AC", backgroundColor: .darkGray)
     lazy var mod: UIButton = setButton(title: "ˆ", backgroundColor: .darkGray)
@@ -53,6 +59,7 @@ class NumericKeyboard: UIStackView {
         self.alignment = .fill
         self.axis = .vertical
         self.spacing = 0.5
+        self.layer.borderWidth = 0.6
     }
     
     func setStackView() -> UIStackView {
@@ -70,6 +77,7 @@ class NumericKeyboard: UIStackView {
         button.setTitle(title, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Arial", size: 22)
+        button.addTarget(self, action: #selector(sender(sender:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }
@@ -100,5 +108,9 @@ class NumericKeyboard: UIStackView {
         lineFiveStackView.addArrangedSubview(equal)
         leftLineFiveStackView.addArrangedSubview(numberZero)
         leftLineFiveStackView.addArrangedSubview(dot)
+    }
+    
+    @objc func sender(sender: UIButton) {
+        delegate?.getValue(character: sender.titleLabel?.text ?? "")
     }
 }
