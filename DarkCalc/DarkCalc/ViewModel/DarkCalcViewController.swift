@@ -112,8 +112,22 @@ class DarkCalcViewController: UIViewController, NumericKeyboardDelegate {
             case "/":
                 setValue(character: character)
                 operation = .divider
+            case "ˆ":
+                setValue(character: character)
+                operation = .pow
+            case "%":
+                setValue(character: character)
+                operation = .percentage
             case "=":
                 setValue(character: character)
+            case ".":
+                guard let text = displayTextField.text else {return}
+                for char in text {
+                    if char == Character(character) {
+                        return
+                    }
+                }
+                displayTextField.text = text + character
             default:
                 displayTextField.text = "Error"
             }

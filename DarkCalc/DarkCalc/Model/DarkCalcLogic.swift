@@ -12,6 +12,8 @@ enum Operation {
     case subtraction
     case divider
     case multiplier
+    case pow
+    case percentage
 }
 
 class DarkCalcLogic {
@@ -28,6 +30,10 @@ class DarkCalcLogic {
             result = firstValue * secondValue
         case .divider:
             result = firstValue / secondValue
+        case .pow:
+            result = pow(firstValue, secondValue)
+        case .percentage:
+            result = firstValue / 100 * secondValue
         }
         return result
     }
